@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1400</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Beamline Control</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>5</number>
+   </property>
+   <property name="leftMargin">
+    <number>10</number>
+   </property>
+   <property name="topMargin">
+    <number>10</number>
+   </property>
+   <property name="rightMargin">
+    <number>10</number>
+   </property>
+   <property name="bottomMargin">
+    <number>10</number>
+   </property>
+   <item>
+    <!-- Top Status Section -->
+    <widget class="QFrame" name="statusFrame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>7</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="statusLayout">
+      <item>
+       <widget class="QLabel" name="headerLabel">
+        <property name="text">
+         <string>Beamline Status Overview</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="styleSheet">
+         <string>font-size: 16pt; font-weight: bold; padding: 10px;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <!-- Device Status Grid Container -->
+       <widget class="QWidget" name="deviceStatusContainer" native="true">
+        <layout class="QGridLayout" name="deviceStatusGrid">
+         <property name="spacing">
+          <number>15</number>
+         </property>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <spacer name="statusSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <!-- Bottom Tab Section -->
+    <widget class="QTabWidget" name="navigationTabs">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>3</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="currentIndex">
+      <number>2</number>
+     </property>
+     <property name="styleSheet">
+      <string>QTabWidget::pane {
+    border: 2px solid #555;
+    background: #f0f0f0;
+}
+QTabBar::tab {
+    background: #ddd;
+    padding: 10px 20px;
+    margin: 2px;
+    font-size: 12pt;
+}
+QTabBar::tab:selected {
+    background: #8b008b;
+    color: white;
+    font-weight: bold;
+}</string>
+     </property>
+     
+     <!-- LCLS Tab -->
+     <widget class="QWidget" name="lclsTab">
+      <attribute name="title">
+       <string>LCLS</string>
+      </attribute>
+      <layout class="QGridLayout" name="lclsGridLayout">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btnWebCameras">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Web Cameras</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="btnViewerBeamline">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Viewer - Beamline</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="btnViewerXCS">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Viewer - XCS</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="btnViewerUserGige">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Viewer - User Gige</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <spacer name="lclsSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     
+     <!-- Laser Tab -->
+     <widget class="QWidget" name="laserTab">
+      <attribute name="title">
+       <string>Laser</string>
+      </attribute>
+      <layout class="QGridLayout" name="laserGridLayout">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btnLaserControl">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Laser Control</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <spacer name="laserSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     
+     <!-- Detectors Tab -->
+     <widget class="QWidget" name="detectorsTab">
+      <attribute name="title">
+       <string>Detectors</string>
+      </attribute>
+      <layout class="QGridLayout" name="detectorsGridLayout">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btnEpix1">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>epix1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QPushButton" name="btnEpix2">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>epix2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QPushButton" name="btnEpix3">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>epix3</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="btnEpix4">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>epix4</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="btnDETHMPJungfrau">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>DET HMP (Jungfrau)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="btnDETHMPs">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>DET HMPs</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="btnDETChillers">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>DET Chillers</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <spacer name="detectorsSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     
+     <!-- User Tab -->
+     <widget class="QWidget" name="userTab">
+      <attribute name="title">
+       <string>User</string>
+      </attribute>
+      <layout class="QGridLayout" name="userGridLayout">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btnUserDiagnostics">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>User Diagnostics</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <spacer name="userSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     
+     <!-- Beamline Tab -->
+     <widget class="QWidget" name="beamlineTab">
+      <attribute name="title">
+       <string>Beamline</string>
+      </attribute>
+      <layout class="QGridLayout" name="beamlineGridLayout">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btnBeamlineOverview">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Beamline Overview</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <spacer name="beamlineSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     
+     <!-- Favorites Tab -->
+     <widget class="QWidget" name="favoritesTab">
+      <attribute name="title">
+       <string>Favorites</string>
+      </attribute>
+      <layout class="QGridLayout" name="favoritesGridLayout">
+       <item row="0" column="0">
+        <widget class="QPushButton" name="btnFavorite1">
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>50</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Quick Access 1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <spacer name="favoritesSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

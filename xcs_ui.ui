@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <!-- Status Section -->
+     <widget class="QFrame" name="statusFrame">
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <!-- Tab Section -->
+     <widget class="QTabWidget" name="tabWidget">
+      <widget class="QWidget" name="lclsTab">
+       <attribute name="title">
+        <string>LCLS</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QPushButton" name="btnWebCameras">
+          <property name="text">
+           <string>Web Cameras</string>
+          </property>
+         </widget>
+        </item>
+        <!-- Add more buttons -->
+       </layout>
+      </widget>
+      <widget class="QWidget" name="detectorsTab">
+       <attribute name="title">
+        <string>Detectors</string>
+       </attribute>
+       <!-- Add detector buttons -->
+      </widget>
+      <!-- Add more tabs -->
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+</ui>

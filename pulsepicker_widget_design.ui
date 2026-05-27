@@ -1,0 +1,1205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>900</width>
+    <height>680</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Pulse Picker Control</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #E8E8E8;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+QFrame {
+    background-color: #F5F5F5;
+    border: 2px solid #B0B0B0;
+    border-radius: 8px;
+}
+
+QLabel {
+    color: #2C3E50;
+    background-color: transparent;
+}
+
+QPushButton {
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    background-color: #357ABD;
+}
+
+QPushButton:pressed {
+    background-color: #2E6DA4;
+}
+
+QLineEdit, PyDMLineEdit {
+    background-color: white;
+    border: 1px solid #C0C0C0;
+    border-radius: 3px;
+    padding: 3px;
+    color: #2C3E50;
+}
+
+PyDMLabel {
+    background-color: white;
+    border: 1px solid #C0C0C0;
+    border-radius: 3px;
+    padding: 3px;
+    color: #2C3E50;
+}</string>
+  </property>
+  <widget class="QLabel" name="TitleLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>15</y>
+     <width>860</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLabel {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                stop:0 #2C3E50, stop:1 #34495E);
+    color: white;
+    border-radius: 8px;
+    font-size: 22pt;
+    font-weight: bold;
+    padding: 10px;
+}</string>
+   </property>
+   <property name="text">
+    <string>Pulse Picker</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QFrame" name="StatusFrame">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>95</y>
+     <width>420</width>
+     <height>560</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="StatusLabel">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>10</y>
+      <width>390</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    background-color: #34495E;
+    color: white;
+    border-radius: 4px;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 5px;
+}</string>
+    </property>
+    <property name="text">
+     <string>System Status</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LimitStatusGroupLabel">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>55</y>
+      <width>390</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #7F8C8D; color: white; font-weight: bold; padding: 3px; border-radius: 3px;</string>
+    </property>
+    <property name="text">
+     <string>Limit Status</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QFrame" name="VisualStatusFrame">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>55</y>
+      <width>390</width>
+      <height>270</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #D3D3D3; border: 1px solid #A0A0A0; border-radius: 5px;</string>
+    </property>
+    <widget class="QFrame" name="FanVisualizationFrame">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>180</width>
+       <height>180</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: transparent; border: none;</string>
+     </property>
+     <widget class="QLabel" name="FanCircle">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>160</width>
+        <height>160</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent; border: 15px solid #505050; border-radius: 80px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="HorizontalBar1">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>60</y>
+        <width>120</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #00FF00; border-radius: 3px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="HorizontalBar2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>105</y>
+        <width>120</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #00FF00; border-radius: 3px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="VerticalBar1">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>30</y>
+        <width>15</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="visible">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #00FF00; border-radius: 3px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="VerticalBar2">
+      <property name="geometry">
+       <rect>
+        <x>105</x>
+        <y>30</y>
+        <width>15</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="visible">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #00FF00; border-radius: 3px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="FanOffText">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>135</y>
+        <width>120</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="visible">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent; font-size: 14pt; font-weight: bold; color: #FF0000;</string>
+      </property>
+      <property name="text">
+       <string>FAN OFF</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="PyDMLabel" name="FanStatusControl">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="visible">
+       <bool>false</bool>
+      </property>
+      <property name="rules" stdset="0">
+       <string>[
+  {
+    &quot;name&quot;: &quot;HorizontalBar1Visibility&quot;,
+    &quot;property&quot;: &quot;Enable&quot;,
+    &quot;expression&quot;: &quot;ch[0] == 1&quot;,
+    &quot;channels&quot;: [{&quot;channel&quot;: &quot;ca://XCS:SB2:MMS:09:I4_L&quot;, &quot;trigger&quot;: true}],
+    &quot;targets&quot;: {
+      &quot;HorizontalBar1.Visible&quot;: &quot;True&quot;,
+      &quot;HorizontalBar2.Visible&quot;: &quot;True&quot;,
+      &quot;FanOnText.Visible&quot;: &quot;True&quot;,
+      &quot;VerticalBar1.Visible&quot;: &quot;False&quot;,
+      &quot;VerticalBar2.Visible&quot;: &quot;False&quot;,
+      &quot;FanOffText.Visible&quot;: &quot;False&quot;
+    }
+  },
+  {
+    &quot;name&quot;: &quot;VerticalBar1Visibility&quot;,
+    &quot;property&quot;: &quot;Enable&quot;,
+    &quot;expression&quot;: &quot;ch[0] == 0&quot;,
+    &quot;channels&quot;: [{&quot;channel&quot;: &quot;ca://XCS:SB2:MMS:09:I4_L&quot;, &quot;trigger&quot;: true}],
+    &quot;targets&quot;: {
+      &quot;HorizontalBar1.Visible&quot;: &quot;False&quot;,
+      &quot;HorizontalBar2.Visible&quot;: &quot;False&quot;,
+      &quot;FanOnText.Visible&quot;: &quot;False&quot;,
+      &quot;VerticalBar1.Visible&quot;: &quot;True&quot;,
+      &quot;VerticalBar2.Visible&quot;: &quot;True&quot;,
+      &quot;FanOffText.Visible&quot;: &quot;True&quot;
+    }
+  }
+]</string>
+      </property>
+      <property name="channel" stdset="0">
+       <string>ca://XCS:SB2:MMS:09:I4_L</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="HorizontalBar1_2">
+      <property name="geometry">
+       <rect>
+        <x>145</x>
+        <y>77</y>
+        <width>31</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #D3D3D3;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="HorizontalBar1_3">
+      <property name="geometry">
+       <rect>
+        <x>3</x>
+        <y>77</y>
+        <width>31</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #D3D3D3;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QLabel" name="UpperLimitTextLabel">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>10</y>
+       <width>180</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 10pt;
+border-color: rgb(136, 136, 136);
+color: rgb(44, 44, 44);</string>
+     </property>
+     <property name="text">
+      <string>+ Limit Violations</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="PyDMLabel" name="UpperLimit">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>40</y>
+       <width>70</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Segoe UI</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 12pt;  border: 2px solid #606060; border-radius: 2px; padding: 5px;
+border-color: rgb(148, 148, 148);
+color: rgb(26, 26, 26);
+background-color: rgb(243, 243, 243);</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="precision" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="showUnits" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="precisionFromPV" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="alarmSensitiveContent" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="alarmSensitiveBorder" stdset="0">
+      <bool>true</bool>
+     </property>
+     <property name="PyDMToolTip" stdset="0">
+      <string/>
+     </property>
+     <property name="channel" stdset="0">
+      <string>ca://${prefix}:MMS:01:nOvrCntPos_RBV</string>
+     </property>
+     <property name="enableRichText" stdset="0">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="FanStatusTextLabel">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>80</y>
+       <width>180</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 10pt;
+border-color: rgb(136, 136, 136);
+color: rgb(44, 44, 44);</string>
+     </property>
+     <property name="text">
+      <string>Fan Status</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="LowerLimitTextLabel">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>145</y>
+       <width>180</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 10pt;
+border-color: rgb(136, 136, 136);
+color: rgb(44, 44, 44);</string>
+     </property>
+     <property name="text">
+      <string>Lower Limit Violations</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="PyDMLabel" name="LowerLimit">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>180</y>
+       <width>70</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Segoe UI</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 12pt;  border: 2px solid #606060; border-radius: 2px; padding: 5px;
+border-color: rgb(148, 148, 148);
+color: rgb(26, 26, 26);
+background-color: rgb(243, 243, 243);</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="precision" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="showUnits" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="channel" stdset="0">
+      <string>ca://XCS:SB2:MMS:09:LD</string>
+     </property>
+    </widget>
+    <widget class="PyDMLabel" name="StatusDisplayLarge">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>215</y>
+       <width>180</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font-size: 12pt;  border: 2px solid #606060; border-radius: 2px; padding: 5px;
+border-color: rgb(148, 148, 148);
+color: rgb(26, 26, 26);
+background-color: rgb(243, 243, 243);</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+     <property name="precision" stdset="0">
+      <number>0</number>
+     </property>
+     <property name="showUnits" stdset="0">
+      <bool>false</bool>
+     </property>
+     <property name="channel" stdset="0">
+      <string>ca://XCS:SB2:MMS:09:SD_SIMPLE</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="FanOnText">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>110</y>
+       <width>120</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+font-size: 14pt; font-weight: bold; 
+background-color: rgb(235, 235, 235);
+color: rgb(43, 43, 43);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="DetailedStatusGroupLabel">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>330</y>
+      <width>390</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #7F8C8D; color: white; font-weight: bold; padding: 3px; border-radius: 3px;</string>
+    </property>
+    <property name="text">
+     <string>Detailed Status</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="MCodeStatusLabel">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>355</y>
+      <width>160</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="text">
+     <string>Blade Position</string>
+    </property>
+   </widget>
+   <widget class="PyDMLineEdit" name="BladePositionRB">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>355</y>
+      <width>200</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="precision" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="showUnits" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="precisionFromPV" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="alarmSensitiveContent" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="PyDMToolTip" stdset="0">
+     <string/>
+    </property>
+    <property name="monitorDisp" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${prefix}:MMS:03:fInOutStatus_RBV</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="HomedLabel">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>390</y>
+      <width>160</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Homed</string>
+    </property>
+   </widget>
+   <widget class="PyDMLineEdit" name="HomedRB">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>390</y>
+      <width>200</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="precision" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="showUnits" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="precisionFromPV" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="alarmSensitiveContent" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="PyDMToolTip" stdset="0">
+     <string/>
+    </property>
+    <property name="monitorDisp" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${prefix}:MMS:01:bCentered_RBV</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="FrequencyLabel">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>425</y>
+      <width>160</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Frequency</string>
+    </property>
+   </widget>
+   <widget class="PyDMLabel" name="FrequencyRBV">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>425</y>
+      <width>200</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="precision" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="showUnits" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="precisionFromPV" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="alarmSensitiveContent" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="PyDMToolTip" stdset="0">
+     <string/>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://${prefix}:MMS:01:fCurrentTriggerFrequency_RBV</string>
+    </property>
+    <property name="enableRichText" stdset="0">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="MotorMovLabel">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>460</y>
+      <width>160</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Motor Moving:</string>
+    </property>
+   </widget>
+   <widget class="PyDMLabel" name="MotorMvRB">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>460</y>
+      <width>200</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://XCS:SB2:MMS:09:MV</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="PPMCodeVerLabel">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>495</y>
+      <width>160</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>MCode Version:</string>
+    </property>
+   </widget>
+   <widget class="PyDMLineEdit" name="PPMCodeVerRB">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>495</y>
+      <width>200</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://XCS:SB2:MMS:09:NS</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="ModeSelectFrame">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>95</y>
+     <width>420</width>
+     <height>560</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="ModeSelectLabel">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>10</y>
+      <width>390</width>
+      <height>35</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    background-color: #34495E;
+    color: white;
+    border-radius: 4px;
+    font-size: 14pt;
+    font-weight: bold;
+    padding: 5px;
+}</string>
+    </property>
+    <property name="text">
+     <string>Mode Selection &amp; Control</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ProgramSelectGroupLabel">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>55</y>
+      <width>390</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #7F8C8D; color: white; font-weight: bold; padding: 3px; border-radius: 3px;</string>
+    </property>
+    <property name="text">
+     <string>Program Selection</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ProgramSelLabel">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>90</y>
+      <width>370</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Current Program (SE):</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="PyDMLabel" name="ProgramSelRB">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>115</y>
+      <width>370</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 11pt; font-weight: bold;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://XCS:SB2:MMS:09:SE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ProgramSelInputLabel">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>155</y>
+      <width>150</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Set Program:</string>
+    </property>
+   </widget>
+   <widget class="PyDMLineEdit" name="ProgramSelInput">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>155</y>
+      <width>215</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://XCS:SB2:MMS:09:SET_SE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ModeControlGroupLabel">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>200</y>
+      <width>390</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #7F8C8D; color: white; font-weight: bold; padding: 3px; border-radius: 3px;</string>
+    </property>
+    <property name="text">
+     <string>Mode Control</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="PyDMPushButton" name="ResetMode">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>240</y>
+      <width>240</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #E74C3C;
+    font-size: 11pt;
+}
+QPushButton:hover {
+    background-color: #C0392B;
+}
+QPushButton:pressed {
+    background-color: #A93226;
+}</string>
+    </property>
+    <property name="text">
+     <string>RESET MODE</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://XCS:SB2:MMS:09:RESET_PG</string>
+    </property>
+    <property name="pressValue" stdset="0">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="PyDMPushButton" name="FlipFlop">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>275</y>
+      <width>240</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    
+	
+	background-color: rgb(54, 64, 153);
+    font-size: 11pt;
+}
+QPushButton:hover {
+    background-color: #2980B9;
+}
+QPushButton:pressed {
+    background-color: #21618C;
+}</string>
+    </property>
+    <property name="text">
+     <string>FLIP FLOP</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://XCS:SB2:MMS:09:RUN_FLIPFLOP</string>
+    </property>
+    <property name="pressValue" stdset="0">
+     <string>1</string>
+    </property>
+   </widget>
+   <widget class="PyDMPushButton" name="BurstModeButton">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>310</y>
+      <width>240</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(54, 64, 153);
+    font-size: 11pt;
+}
+QPushButton:hover {
+    background-color: #8E44AD;
+}
+QPushButton:pressed {
+    background-color: #7D3C98;
+}</string>
+    </property>
+    <property name="text">
+     <string>BURST MODE</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://XCS:SB2:MMS:09:RUN_BURSTMODE</string>
+    </property>
+    <property name="pressValue" stdset="0">
+     <string>1</string>
+    </property>
+   </widget>
+   <widget class="PyDMPushButton" name="HomeButton">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>350</y>
+      <width>240</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #F39C12;
+    font-size: 11pt;
+}
+QPushButton:hover {
+    background-color: #E67E22;
+}
+QPushButton:pressed {
+    background-color: #D68910;
+}</string>
+    </property>
+    <property name="text">
+     <string>HOME MOTOR</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://XCS:SB2:MMS:09:HOME:MOTOR</string>
+    </property>
+    <property name="pressValue" stdset="0">
+     <string>1</string>
+    </property>
+   </widget>
+   <widget class="PyDMPushButton" name="OpenButton">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>390</y>
+      <width>150</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #27AE60;
+    font-size: 11pt;
+}
+QPushButton:hover {
+    background-color: #229954;
+}
+QPushButton:pressed {
+    background-color: #1E8449;
+}</string>
+    </property>
+    <property name="text">
+     <string>OPEN</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://XCS:SB2:MMS:09:S_OPEN</string>
+    </property>
+    <property name="pressValue" stdset="0">
+     <string>1</string>
+    </property>
+   </widget>
+   <widget class="PyDMPushButton" name="CloseButton">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>390</y>
+      <width>150</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #E74C3C;
+    font-size: 11pt;
+}
+QPushButton:hover {
+    background-color: #C0392B;
+}
+QPushButton:pressed {
+    background-color: #A93226;
+}</string>
+    </property>
+    <property name="text">
+     <string>CLOSE</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://XCS:SB2:MMS:09:S_CLOSE</string>
+    </property>
+    <property name="pressValue" stdset="0">
+     <string>1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="SimpleStatusLabel">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>480</y>
+      <width>370</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Simple Status:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="PyDMLabel" name="SDRB">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>510</y>
+      <width>260</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-size: 11pt; font-weight: bold;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="precision" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="showUnits" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="precisionFromPV" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="alarmSensitiveContent" stdset="0">
+     <bool>false</bool>
+    </property>
+    <property name="alarmSensitiveBorder" stdset="0">
+     <bool>true</bool>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://XCS:SB2:MMS:09:SD_SIMPLE</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMLabel</class>
+   <extends>QLabel</extends>
+   <header>pydm.widgets.label</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>pydm.widgets.line_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMPushButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.pushbutton</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

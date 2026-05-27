@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>850</width>
+    <height>1000</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>850</width>
+    <height>1000</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>831</width>
+     <height>641</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">&lt;widget class=&quot;QFrame&quot; name=&quot;frame&quot;&gt;
+   &lt;property name=&quot;geometry&quot;&gt;
+    &lt;rect&gt;
+     &lt;x&gt;10&lt;/x&gt;
+     &lt;y&gt;10&lt;/y&gt;
+     &lt;width&gt;831&lt;/width&gt;
+     &lt;height&gt;641&lt;/height&gt;
+    &lt;/rect&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;styleSheet&quot;&gt;
+    &lt;string notr=&quot;true&quot;&gt;
+QLabel[row=&quot;even&quot;], QLineEdit[row=&quot;even&quot;], QPushButton[row=&quot;even&quot;] {
+    background-color: rgb(245, 245, 245);
+}
+QLabel[row=&quot;odd&quot;], QLineEdit[row=&quot;odd&quot;], QPushButton[row=&quot;odd&quot;] {
+    background-color: rgb(230, 230, 230);
+}
+    &lt;/string&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;frameShape&quot;&gt;
+    &lt;enum&gt;QFrame::StyledPanel&lt;/enum&gt;
+   &lt;/property&gt;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QWidget" name="horizontalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>19</y>
+      <width>801</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout"/>
+   </widget>
+  </widget>
+  <widget class="MotorBeckhoffRow" name="MotorBeckhoffRow">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>670</y>
+     <width>800</width>
+     <height>46</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="motor" stdset="0">
+    <string>${prefix}:MMS:01</string>
+   </property>
+  </widget>
+  <widget class="MotorBeckhoffRow" name="MotorBeckhoffRow_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>730</y>
+     <width>800</width>
+     <height>46</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="motor" stdset="0">
+    <string>${prefix}:MMS:02</string>
+   </property>
+  </widget>
+  <widget class="MotorBeckhoffRow" name="MotorBeckhoffRow_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>790</y>
+     <width>800</width>
+     <height>46</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="motor" stdset="0">
+    <string>${prefix}:MMS:03</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>700</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Spindle</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>760</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>x-axis</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>820</y>
+     <width>67</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>y-axis</string>
+   </property>
+  </widget>
+  <widget class="PyDMShellCommand" name="PyDMShellCommand">
+   <property name="geometry">
+    <rect>
+     <x>795</x>
+     <y>800</y>
+     <width>29</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="alarmSensitiveContent">
+    <bool>false</bool>
+   </property>
+   <property name="alarmSensitiveBorder">
+    <bool>false</bool>
+   </property>
+   <property name="PyDMToolTip">
+    <string/>
+   </property>
+   <property name="channel">
+    <string/>
+   </property>
+   <property name="PyDMIcon">
+    <string/>
+   </property>
+   <property name="showConfirmDialog">
+    <bool>false</bool>
+   </property>
+   <property name="runCommandsInFullShell">
+    <bool>false</bool>
+   </property>
+   <property name="confirmMessage">
+    <string>Are you sure you want to proceed?</string>
+   </property>
+   <property name="environmentVariables">
+    <string/>
+   </property>
+   <property name="showIcon">
+    <bool>true</bool>
+   </property>
+   <property name="allowMultipleExecutions">
+    <bool>false</bool>
+   </property>
+   <property name="titles">
+    <stringlist/>
+   </property>
+   <property name="commands">
+    <stringlist>
+     <string>/cds/group/pcds/epics-dev/screens/pydm/xpp/dev/pp_expert.sh</string>
+    </stringlist>
+   </property>
+   <property name="passwordProtected">
+    <bool>false</bool>
+   </property>
+   <property name="password">
+    <string/>
+   </property>
+   <property name="protectedPassword">
+    <string/>
+   </property>
+   <property name="showCurrentlyRunningIndication">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="PyDMShellCommand" name="PyDMShellCommand_2">
+   <property name="geometry">
+    <rect>
+     <x>795</x>
+     <y>740</y>
+     <width>29</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="alarmSensitiveContent">
+    <bool>false</bool>
+   </property>
+   <property name="alarmSensitiveBorder">
+    <bool>false</bool>
+   </property>
+   <property name="PyDMToolTip">
+    <string/>
+   </property>
+   <property name="channel">
+    <string/>
+   </property>
+   <property name="PyDMIcon">
+    <string/>
+   </property>
+   <property name="showConfirmDialog">
+    <bool>false</bool>
+   </property>
+   <property name="runCommandsInFullShell">
+    <bool>false</bool>
+   </property>
+   <property name="confirmMessage">
+    <string>Are you sure you want to proceed?</string>
+   </property>
+   <property name="environmentVariables">
+    <string/>
+   </property>
+   <property name="showIcon">
+    <bool>true</bool>
+   </property>
+   <property name="allowMultipleExecutions">
+    <bool>false</bool>
+   </property>
+   <property name="titles">
+    <stringlist/>
+   </property>
+   <property name="commands">
+    <stringlist>
+     <string>/cds/group/pcds/epics-dev/screens/pydm/xpp/dev/pp_expert.sh</string>
+    </stringlist>
+   </property>
+   <property name="passwordProtected">
+    <bool>false</bool>
+   </property>
+   <property name="password">
+    <string/>
+   </property>
+   <property name="protectedPassword">
+    <string/>
+   </property>
+   <property name="showCurrentlyRunningIndication">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="PyDMShellCommand" name="PyDMShellCommand_3">
+   <property name="geometry">
+    <rect>
+     <x>795</x>
+     <y>680</y>
+     <width>29</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="alarmSensitiveContent">
+    <bool>false</bool>
+   </property>
+   <property name="alarmSensitiveBorder">
+    <bool>false</bool>
+   </property>
+   <property name="PyDMToolTip">
+    <string/>
+   </property>
+   <property name="channel">
+    <string/>
+   </property>
+   <property name="PyDMIcon">
+    <string/>
+   </property>
+   <property name="showConfirmDialog">
+    <bool>false</bool>
+   </property>
+   <property name="runCommandsInFullShell">
+    <bool>false</bool>
+   </property>
+   <property name="confirmMessage">
+    <string>Are you sure you want to proceed?</string>
+   </property>
+   <property name="environmentVariables">
+    <string/>
+   </property>
+   <property name="showIcon">
+    <bool>true</bool>
+   </property>
+   <property name="allowMultipleExecutions">
+    <bool>false</bool>
+   </property>
+   <property name="titles">
+    <stringlist/>
+   </property>
+   <property name="commands">
+    <stringlist>
+     <string>/cds/group/pcds/epics-dev/screens/pydm/xpp/dev/pp_expert.sh</string>
+    </stringlist>
+   </property>
+   <property name="passwordProtected">
+    <bool>false</bool>
+   </property>
+   <property name="password">
+    <string/>
+   </property>
+   <property name="protectedPassword">
+    <string/>
+   </property>
+   <property name="showCurrentlyRunningIndication">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMShellCommand</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.shell_command</header>
+  </customwidget>
+  <customwidget>
+   <class>MotorBeckhoffRow</class>
+   <extends>QWidget</extends>
+   <header>pcdswidgets.motion.common.motor_beckhoff_row</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
