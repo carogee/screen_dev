@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>50</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>800</width>
+    <height>50</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>800</width>
+    <height>50</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>Sans Serif</family>
+    <pointsize>11</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>State Positioner Control</string>
+  </property>
+  <widget class="QFrame" name="mainFrame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Sunken</enum>
+   </property>
+   <property name="lineWidth">
+    <number>1</number>
+   </property>
+   <layout class="QHBoxLayout" name="mainLayout">
+    <property name="spacing">
+     <number>8</number>
+    </property>
+    <property name="leftMargin">
+     <number>5</number>
+    </property>
+    <property name="topMargin">
+     <number>5</number>
+    </property>
+    <property name="rightMargin">
+     <number>5</number>
+    </property>
+    <property name="bottomMargin">
+     <number>5</number>
+    </property>
+    <item>
+     <layout class="QVBoxLayout" name="errorIndicatorLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="PyDMByteIndicator" name="errorIndicator">
+        <property name="minimumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Error Status - Red indicates error</string>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://$(P):ERROR_RBV</string>
+        </property>
+        <property name="showLabels" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="circles" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="numBits" stdset="0">
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="busyIndicatorLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="PyDMByteIndicator" name="busyIndicator">
+        <property name="minimumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>25</width>
+          <height>25</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Busy - Shows when state is moving</string>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://$(P):BUSY_RBV</string>
+        </property>
+        <property name="showLabels" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="circles" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="numBits" stdset="0">
+         <number>1</number>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="labelLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="deviceLabel">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(43, 43, 43);</string>
+        </property>
+        <property name="text">
+         <string>SP1K4 State</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="getLayout">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="PyDMLabel" name="stateGet">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>18</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Current state (GET_RBV)</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(43, 43, 43);</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alarmSensitiveContent" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PyDMToolTip" stdset="0">
+         <string/>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${P}:GET_RBV</string>
+        </property>
+        <property name="enableRichText" stdset="0">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="setLayout">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="PyDMEnumComboBox" name="stateSet">
+        <property name="minimumSize">
+         <size>
+          <width>120</width>
+          <height>18</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Request state change (SET)</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(43, 43, 43); background-color: rgb(250, 250, 250);</string>
+        </property>
+        <property name="alarmSensitiveContent" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PyDMToolTip" stdset="0">
+         <string/>
+        </property>
+        <property name="monitorDisp" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${P}:SET</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="errorMsgLayout">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="errorMsgLabel">
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>12</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(43, 43, 43);</string>
+        </property>
+        <property name="text">
+         <string>Error</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="PyDMLabel" name="errorMessage">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>18</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Error message (ERRMSG_RBV)</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(43, 43, 43);</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="precision" stdset="0">
+         <number>0</number>
+        </property>
+        <property name="showUnits" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="precisionFromPV" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="alarmSensitiveContent" stdset="0">
+         <bool>false</bool>
+        </property>
+        <property name="alarmSensitiveBorder" stdset="0">
+         <bool>true</bool>
+        </property>
+        <property name="PyDMToolTip" stdset="0">
+         <string/>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://${P}:ERRID_RBV</string>
+        </property>
+        <property name="enableRichText" stdset="0">
+         <bool>false</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="resetLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="PyDMPushButton" name="resetButton">
+        <property name="minimumSize">
+         <size>
+          <width>95</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>95</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Clear error and reset (RESET)</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(34, 34, 34); background-color: rgb(238, 238, 238);</string>
+        </property>
+        <property name="text">
+         <string>Clear Error</string>
+        </property>
+        <property name="channel" stdset="0">
+         <string>ca://$(P):RESET</string>
+        </property>
+        <property name="pressValue" stdset="0">
+         <string>1</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="expertLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="PyDMShellCommand" name="expertButton">
+        <property name="minimumSize">
+         <size>
+          <width>30</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Sans Serif</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="toolTip">
+         <string>Open expert screen</string>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(34, 34, 34); background-color: rgb(238, 238, 238);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="command" stdset="0">
+         <string>pydm -m &quot;P=$(P)&quot; state_expert.ui</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMLabel</class>
+   <extends>QLabel</extends>
+   <header>pydm.widgets.label</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMByteIndicator</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.byte</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMEnumComboBox</class>
+   <extends>QComboBox</extends>
+   <header>pydm.widgets.enum_combo_box</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMPushButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.pushbutton</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMShellCommand</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.shell_command</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

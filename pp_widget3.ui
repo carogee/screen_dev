@@ -233,7 +233,7 @@
          <property name="visible">
           <bool>false</bool>
          </property>
-         <property name="rules">
+         <property name="rules" stdset="0">
           <string>[
   {
     &quot;name&quot;: &quot;HorizontalBar1Visibility&quot;,
@@ -265,7 +265,7 @@
   }
 ]</string>
          </property>
-         <property name="channel">
+         <property name="channel" stdset="0">
           <string>ca://XCS:SB2:MMS:09:I4_L</string>
          </property>
         </widget>
@@ -367,31 +367,31 @@ color: rgb(12, 12, 12);</string>
            <property name="alignment">
             <set>Qt::AlignCenter</set>
            </property>
-           <property name="rules">
+           <property name="rules" stdset="0">
             <string>[{&quot;name&quot;: &quot;InOutString&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;initial_value&quot;: &quot;&quot;, &quot;expression&quot;: &quot;'Unknown' if (ch[0]==0) else 'In' if (ch[0]==1) else 'Out' if (ch[0]==2)&quot;, &quot;channels&quot;: [{&quot;channel&quot;: &quot;ca://${prefix}:MMS:03:eInOutStatus_RBV&quot;, &quot;trigger&quot;: true, &quot;use_enum&quot;: true}], &quot;notes&quot;: &quot;&quot;}]</string>
            </property>
-           <property name="precision">
+           <property name="precision" stdset="0">
             <number>0</number>
            </property>
-           <property name="showUnits">
+           <property name="showUnits" stdset="0">
             <bool>false</bool>
            </property>
-           <property name="precisionFromPV">
+           <property name="precisionFromPV" stdset="0">
             <bool>true</bool>
            </property>
-           <property name="alarmSensitiveContent">
+           <property name="alarmSensitiveContent" stdset="0">
             <bool>false</bool>
            </property>
-           <property name="alarmSensitiveBorder">
+           <property name="alarmSensitiveBorder" stdset="0">
             <bool>true</bool>
            </property>
-           <property name="PyDMToolTip">
+           <property name="PyDMToolTip" stdset="0">
             <string/>
            </property>
-           <property name="channel">
+           <property name="channel" stdset="0">
             <string>ca://${prefix}:MMS:03:eInOutStatus_RBV</string>
            </property>
-           <property name="enableRichText">
+           <property name="enableRichText" stdset="0">
             <bool>false</bool>
            </property>
           </widget>
@@ -436,28 +436,28 @@ color: rgb(0, 0, 0);</string>
            <property name="readOnly">
             <bool>true</bool>
            </property>
-           <property name="precision">
+           <property name="precision" stdset="0">
             <number>0</number>
            </property>
-           <property name="showUnits">
+           <property name="showUnits" stdset="0">
             <bool>false</bool>
            </property>
-           <property name="precisionFromPV">
+           <property name="precisionFromPV" stdset="0">
             <bool>true</bool>
            </property>
-           <property name="alarmSensitiveContent">
+           <property name="alarmSensitiveContent" stdset="0">
             <bool>false</bool>
            </property>
-           <property name="alarmSensitiveBorder">
+           <property name="alarmSensitiveBorder" stdset="0">
             <bool>true</bool>
            </property>
-           <property name="PyDMToolTip">
+           <property name="PyDMToolTip" stdset="0">
             <string/>
            </property>
-           <property name="monitorDisp">
+           <property name="monitorDisp" stdset="0">
             <bool>false</bool>
            </property>
-           <property name="channel">
+           <property name="channel" stdset="0">
             <string>ca://${prefix}:MMS:01:fCurrentTriggerFrequency_RBV</string>
            </property>
           </widget>
@@ -505,49 +505,49 @@ QPushButton:pressed {
         <property name="text">
          <string>OPEN</string>
         </property>
-        <property name="alarmSensitiveContent">
+        <property name="alarmSensitiveContent" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="alarmSensitiveBorder">
+        <property name="alarmSensitiveBorder" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="PyDMToolTip">
+        <property name="PyDMToolTip" stdset="0">
          <string/>
         </property>
-        <property name="monitorDisp">
+        <property name="monitorDisp" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="channel">
+        <property name="channel" stdset="0">
          <string>ca://${prefix}:MMS:01:eModeSelector</string>
         </property>
-        <property name="PyDMIcon">
+        <property name="PyDMIcon" stdset="0">
          <string/>
         </property>
-        <property name="passwordProtected">
+        <property name="passwordProtected" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="password">
+        <property name="password" stdset="0">
          <string/>
         </property>
-        <property name="protectedPassword">
+        <property name="protectedPassword" stdset="0">
          <string/>
         </property>
-        <property name="showConfirmDialog">
+        <property name="showConfirmDialog" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="confirmMessage">
+        <property name="confirmMessage" stdset="0">
          <string>Are you sure you want to proceed?</string>
         </property>
-        <property name="pressValue">
+        <property name="pressValue" stdset="0">
          <string>3</string>
         </property>
-        <property name="releaseValue">
+        <property name="releaseValue" stdset="0">
          <string>None</string>
         </property>
-        <property name="relativeChange">
+        <property name="relativeChange" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="writeWhenRelease">
+        <property name="writeWhenRelease" stdset="0">
          <bool>false</bool>
         </property>
        </widget>
@@ -582,49 +582,49 @@ QPushButton:pressed {
         <property name="text">
          <string>CLOSE</string>
         </property>
-        <property name="alarmSensitiveContent">
+        <property name="alarmSensitiveContent" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="alarmSensitiveBorder">
+        <property name="alarmSensitiveBorder" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="PyDMToolTip">
+        <property name="PyDMToolTip" stdset="0">
          <string/>
         </property>
-        <property name="monitorDisp">
+        <property name="monitorDisp" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="channel">
+        <property name="channel" stdset="0">
          <string>ca://${prefix}:MMS:01:eModeSelector</string>
         </property>
-        <property name="PyDMIcon">
+        <property name="PyDMIcon" stdset="0">
          <string/>
         </property>
-        <property name="passwordProtected">
+        <property name="passwordProtected" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="password">
+        <property name="password" stdset="0">
          <string/>
         </property>
-        <property name="protectedPassword">
+        <property name="protectedPassword" stdset="0">
          <string/>
         </property>
-        <property name="showConfirmDialog">
+        <property name="showConfirmDialog" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="confirmMessage">
+        <property name="confirmMessage" stdset="0">
          <string>Are you sure you want to proceed?</string>
         </property>
-        <property name="pressValue">
+        <property name="pressValue" stdset="0">
          <string>4</string>
         </property>
-        <property name="releaseValue">
+        <property name="releaseValue" stdset="0">
          <string>None</string>
         </property>
-        <property name="relativeChange">
+        <property name="relativeChange" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="writeWhenRelease">
+        <property name="writeWhenRelease" stdset="0">
          <bool>false</bool>
         </property>
        </widget>
@@ -659,31 +659,31 @@ color: rgb(0, 0, 0);</string>
         <property name="readOnly">
          <bool>true</bool>
         </property>
-        <property name="precision">
+        <property name="precision" stdset="0">
          <number>0</number>
         </property>
-        <property name="showUnits">
+        <property name="showUnits" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="precisionFromPV">
+        <property name="precisionFromPV" stdset="0">
          <bool>true</bool>
         </property>
-        <property name="alarmSensitiveContent">
+        <property name="alarmSensitiveContent" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="alarmSensitiveBorder">
+        <property name="alarmSensitiveBorder" stdset="0">
          <bool>true</bool>
         </property>
-        <property name="PyDMToolTip">
+        <property name="PyDMToolTip" stdset="0">
          <string/>
         </property>
-        <property name="monitorDisp">
+        <property name="monitorDisp" stdset="0">
          <bool>false</bool>
         </property>
-        <property name="channel">
+        <property name="channel" stdset="0">
          <string>ca://${prefix}:MMS:01:sErrorMessage_RBV</string>
         </property>
-        <property name="displayFormat">
+        <property name="displayFormat" stdset="0">
          <enum>PyDMLineEdit::String</enum>
         </property>
        </widget>
@@ -712,7 +712,7 @@ color: rgb(0, 0, 0);</string>
         <rect>
          <x>10</x>
          <y>320</y>
-         <width>381</width>
+         <width>395</width>
          <height>128</height>
         </rect>
        </property>
@@ -739,34 +739,34 @@ color: rgb(0, 0, 0);</string>
             <property name="styleSheet">
              <string notr="true">border-color: rgb(234, 234, 234);</string>
             </property>
-            <property name="alarmSensitiveContent">
+            <property name="alarmSensitiveContent" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="alarmSensitiveBorder">
+            <property name="alarmSensitiveBorder" stdset="0">
              <bool>true</bool>
             </property>
-            <property name="PyDMToolTip">
+            <property name="PyDMToolTip" stdset="0">
              <string/>
             </property>
-            <property name="channel">
+            <property name="channel" stdset="0">
              <string>ca://${prefix}:MMS:01:bCentered_RBV</string>
             </property>
-            <property name="showLabels">
+            <property name="showLabels" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="bigEndian">
+            <property name="bigEndian" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="circles">
+            <property name="circles" stdset="0">
              <bool>true</bool>
             </property>
-            <property name="numBits">
+            <property name="numBits" stdset="0">
              <number>1</number>
             </property>
-            <property name="shift">
+            <property name="shift" stdset="0">
              <number>0</number>
             </property>
-            <property name="labels">
+            <property name="labels" stdset="0">
              <stringlist>
               <string>Bit 0</string>
              </stringlist>
@@ -838,31 +838,31 @@ background-color: rgb(255, 255, 255);</string>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
           </property>
-          <property name="rules">
+          <property name="rules" stdset="0">
            <string>[{&quot;name&quot;: &quot;ModeString&quot;, &quot;property&quot;: &quot;Text&quot;, &quot;initial_value&quot;: &quot;&quot;, &quot;expression&quot;: &quot;'No Mode' if (ch[0]==0) else 'Flip Flop' if (ch[0]==1) else 'Burst' if (ch[0]==1) else 'Open' if (ch[0]==3) else 'Close' if (ch[0]==4) else 'Home' if (ch[0]==5)&quot;, &quot;channels&quot;: [{&quot;channel&quot;: &quot;ca://${prefix}:MMS:01:eModeSelector_RBV&quot;, &quot;trigger&quot;: true, &quot;use_enum&quot;: false}], &quot;notes&quot;: &quot;&quot;}]</string>
           </property>
-          <property name="precision">
+          <property name="precision" stdset="0">
            <number>0</number>
           </property>
-          <property name="showUnits">
+          <property name="showUnits" stdset="0">
            <bool>false</bool>
           </property>
-          <property name="precisionFromPV">
+          <property name="precisionFromPV" stdset="0">
            <bool>true</bool>
           </property>
-          <property name="alarmSensitiveContent">
+          <property name="alarmSensitiveContent" stdset="0">
            <bool>false</bool>
           </property>
-          <property name="alarmSensitiveBorder">
+          <property name="alarmSensitiveBorder" stdset="0">
            <bool>true</bool>
           </property>
-          <property name="PyDMToolTip">
+          <property name="PyDMToolTip" stdset="0">
            <string/>
           </property>
-          <property name="channel">
+          <property name="channel" stdset="0">
            <string>ca://${prefix}:MMS:01:eModeSelector_RBV</string>
           </property>
-          <property name="enableRichText">
+          <property name="enableRichText" stdset="0">
            <bool>false</bool>
           </property>
          </widget>
@@ -903,49 +903,49 @@ QPushButton:pressed {
             <property name="text">
              <string>FLIP FLOP</string>
             </property>
-            <property name="alarmSensitiveContent">
+            <property name="alarmSensitiveContent" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="alarmSensitiveBorder">
+            <property name="alarmSensitiveBorder" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="PyDMToolTip">
+            <property name="PyDMToolTip" stdset="0">
              <string/>
             </property>
-            <property name="monitorDisp">
+            <property name="monitorDisp" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="channel">
+            <property name="channel" stdset="0">
              <string>ca://${prefix}:MMS:01:eModeSelector</string>
             </property>
-            <property name="PyDMIcon">
+            <property name="PyDMIcon" stdset="0">
              <string/>
             </property>
-            <property name="passwordProtected">
+            <property name="passwordProtected" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="password">
+            <property name="password" stdset="0">
              <string/>
             </property>
-            <property name="protectedPassword">
+            <property name="protectedPassword" stdset="0">
              <string/>
             </property>
-            <property name="showConfirmDialog">
+            <property name="showConfirmDialog" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="confirmMessage">
+            <property name="confirmMessage" stdset="0">
              <string>Are you sure you want to proceed?</string>
             </property>
-            <property name="pressValue">
+            <property name="pressValue" stdset="0">
              <string>1</string>
             </property>
-            <property name="releaseValue">
+            <property name="releaseValue" stdset="0">
              <string>None</string>
             </property>
-            <property name="relativeChange">
+            <property name="relativeChange" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="writeWhenRelease">
+            <property name="writeWhenRelease" stdset="0">
              <bool>false</bool>
             </property>
            </widget>
@@ -968,49 +968,49 @@ QPushButton:pressed {
             <property name="text">
              <string>BURST MODE</string>
             </property>
-            <property name="alarmSensitiveContent">
+            <property name="alarmSensitiveContent" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="alarmSensitiveBorder">
+            <property name="alarmSensitiveBorder" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="PyDMToolTip">
+            <property name="PyDMToolTip" stdset="0">
              <string/>
             </property>
-            <property name="monitorDisp">
+            <property name="monitorDisp" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="channel">
+            <property name="channel" stdset="0">
              <string>ca://${prefix}:MMS:01:eModeSelector</string>
             </property>
-            <property name="PyDMIcon">
+            <property name="PyDMIcon" stdset="0">
              <string/>
             </property>
-            <property name="passwordProtected">
+            <property name="passwordProtected" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="password">
+            <property name="password" stdset="0">
              <string/>
             </property>
-            <property name="protectedPassword">
+            <property name="protectedPassword" stdset="0">
              <string/>
             </property>
-            <property name="showConfirmDialog">
+            <property name="showConfirmDialog" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="confirmMessage">
+            <property name="confirmMessage" stdset="0">
              <string>Are you sure you want to proceed?</string>
             </property>
-            <property name="pressValue">
+            <property name="pressValue" stdset="0">
              <string>2</string>
             </property>
-            <property name="releaseValue">
+            <property name="releaseValue" stdset="0">
              <string>None</string>
             </property>
-            <property name="relativeChange">
+            <property name="relativeChange" stdset="0">
              <bool>false</bool>
             </property>
-            <property name="writeWhenRelease">
+            <property name="writeWhenRelease" stdset="0">
              <bool>false</bool>
             </property>
            </widget>
@@ -1069,53 +1069,53 @@ QPushButton:pressed {
        <property name="text">
         <string>CTRL</string>
        </property>
-       <property name="alarmSensitiveContent">
+       <property name="alarmSensitiveContent" stdset="0">
         <bool>false</bool>
        </property>
-       <property name="alarmSensitiveBorder">
+       <property name="alarmSensitiveBorder" stdset="0">
         <bool>true</bool>
        </property>
-       <property name="PyDMToolTip">
+       <property name="PyDMToolTip" stdset="0">
         <string/>
        </property>
-       <property name="channel">
+       <property name="channel" stdset="0">
         <string/>
        </property>
-       <property name="PyDMIcon">
+       <property name="PyDMIcon" stdset="0">
         <string/>
        </property>
-       <property name="filenames">
+       <property name="filenames" stdset="0">
         <stringlist>
-         <string>pp_config3.ui</string>
+         <string>pp_config.sh</string>
         </stringlist>
        </property>
-       <property name="titles">
+       <property name="titles" stdset="0">
         <stringlist/>
        </property>
-       <property name="showIcon">
+       <property name="showIcon" stdset="0">
         <bool>false</bool>
        </property>
-       <property name="recursiveDisplaySearch">
-        <bool>false</bool>
-       </property>
-       <property name="macros">
+       <property name="macros" stdset="0">
         <stringlist>
          <string>{}</string>
         </stringlist>
        </property>
-       <property name="openInNewWindow">
+       <property name="openInNewWindow" stdset="0">
         <bool>false</bool>
        </property>
-       <property name="passwordProtected">
+       <property name="passwordProtected" stdset="0">
         <bool>false</bool>
        </property>
-       <property name="password">
+       <property name="password" stdset="0">
         <string/>
        </property>
-       <property name="protectedPassword">
+       <property name="protectedPassword" stdset="0">
         <string/>
        </property>
-       <property name="followSymlinks">
+       <property name="followSymlinks" stdset="0">
+        <bool>false</bool>
+       </property>
+       <property name="recursiveDisplaySearch" stdset="0">
         <bool>false</bool>
        </property>
       </widget>

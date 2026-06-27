@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>50</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>FZP State Control</string>
+  </property>
+  <widget class="QFrame" name="frame_main">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label_device">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>12</y>
+      <width>100</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>FZP State:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="PyDMLabel" name="PyDMLabel_state_rbv">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>10</y>
+      <width>150</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">PyDMLabel {
+  background-color: rgb(250, 250, 250);
+  color: rgb(43, 43, 43);
+  border: 1px solid gray;
+  padding: 2px;
+}</string>
+    </property>
+    <property name="text">
+     <string>OUT</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://SP1K4:FZP:STATE:GET_RBV</string>
+    </property>
+   </widget>
+   <widget class="PyDMByteIndicator" name="PyDMByteIndicator_busy">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>10</y>
+      <width>100</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string>Green = Motion Complete, Gray = Moving</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://SP1K4:FZP:STATE:BUSY_RBV</string>
+    </property>
+    <property name="onColor" stdset="0">
+     <color>
+      <red>0</red>
+      <green>255</green>
+      <blue>0</blue>
+     </color>
+    </property>
+    <property name="offColor" stdset="0">
+     <color>
+      <red>100</red>
+      <green>100</green>
+      <blue>100</blue>
+     </color>
+    </property>
+    <property name="orientation" stdset="0">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="numBits" stdset="0">
+     <number>1</number>
+    </property>
+    <property name="shift" stdset="0">
+     <number>0</number>
+    </property>
+    <property name="labels" stdset="0">
+     <stringlist>
+      <string>Ready</string>
+     </stringlist>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_setpoint">
+    <property name="geometry">
+     <rect>
+      <x>385</x>
+      <y>12</y>
+      <width>75</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Set State:</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="PyDMEnumComboBox" name="PyDMEnumComboBox_state_set">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>12</y>
+      <width>150</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Select desired state position</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QComboBox {
+  background-color: rgb(250, 250, 250);
+  color: rgb(43, 43, 43);
+  border: 1px solid gray;
+  padding: 2px;
+}
+QComboBox::drop-down {
+  border-left: 1px solid gray;
+}
+QComboBox::down-arrow {
+  image: none;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid rgb(43, 43, 43);
+  margin-right: 5px;
+}</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://SP1K4:FZP:STATE:SET</string>
+    </property>
+   </widget>
+   <widget class="PyDMPushButton" name="PyDMPushButton_clear_error">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>12</y>
+      <width>80</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Clear motor errors</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  background-color: rgb(170, 0, 0);
+  color: white;
+  border: 1px solid rgb(120, 0, 0);
+  padding: 2px;
+  border-radius: 2px;
+}
+QPushButton:hover {
+  background-color: rgb(200, 0, 0);
+}
+QPushButton:pressed {
+  background-color: rgb(140, 0, 0);
+}</string>
+    </property>
+    <property name="text">
+     <string>Clear Error</string>
+    </property>
+    <property name="channel" stdset="0">
+     <string>ca://SP1K4:FZP:STATE:ERR_CLR</string>
+    </property>
+    <property name="pressValue" stdset="0">
+     <string>1</string>
+    </property>
+   </widget>
+   <widget class="PyDMRelatedDisplayButton" name="PyDMRelatedDisplayButton_expert">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>12</y>
+      <width>70</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Sans Serif</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="toolTip">
+     <string>Open expert control screen</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  background-color: rgb(238, 238, 238);
+  color: rgb(34, 34, 34);
+  border: 1px solid gray;
+  padding: 2px;
+  border-radius: 2px;
+}
+QPushButton:hover {
+  background-color: rgb(220, 220, 220);
+}
+QPushButton:pressed {
+  background-color: rgb(200, 200, 200);
+}</string>
+    </property>
+    <property name="text">
+     <string>⚙ Expert</string>
+    </property>
+    <property name="filenames" stdset="0">
+     <stringlist>
+      <string>sp1k4_fzp_expert.ui</string>
+     </stringlist>
+    </property>
+    <property name="openInNewWindow" stdset="0">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PyDMLabel</class>
+   <extends>QLabel</extends>
+   <header>pydm.widgets.label</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMByteIndicator</class>
+   <extends>QWidget</extends>
+   <header>pydm.widgets.byte</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMEnumComboBox</class>
+   <extends>QComboBox</extends>
+   <header>pydm.widgets.enum_combo_box</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMPushButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.pushbutton</header>
+  </customwidget>
+  <customwidget>
+   <class>PyDMRelatedDisplayButton</class>
+   <extends>QPushButton</extends>
+   <header>pydm.widgets.related_display_button</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
